@@ -1,0 +1,707 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>권민석 포트폴리오 | Cloud / Infrastructure</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#6C8CF5;
+  --blue-deep:#4A6BE0;
+  --ink:#16181D;
+  --body:#3C4149;
+  --muted:#767C87;
+  --line:#E4E7EC;
+  --bg:#FFFFFF;
+  --soft:#F5F7FB;
+  --max:1120px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--bg);color:var(--body);
+  font-family:'Noto Sans KR',-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo',sans-serif;
+  font-size:16px;line-height:1.75;-webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{max-width:var(--max);margin:0 auto;padding-inline:24px}
+
+/* nav */
+nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;gap:8px;height:56px;overflow-x:auto;scrollbar-width:none}
+nav .wrap::-webkit-scrollbar{display:none}
+nav b{font-weight:900;color:var(--ink);margin-right:auto;white-space:nowrap;font-size:15px}
+nav a{white-space:nowrap;text-decoration:none;font-size:13.5px;color:var(--muted);padding:6px 10px;border-radius:999px}
+nav a:hover{color:var(--blue-deep);background:var(--soft)}
+
+/* hero */
+.hero{background:var(--blue);color:#fff;padding-block:112px}
+.hero h1{font-size:clamp(34px,6.5vw,62px);line-height:1.22;font-weight:900;margin:0 0 28px;letter-spacing:-.02em}
+.hero .sub{font-size:15px;opacity:.9;letter-spacing:.06em;margin-bottom:64px}
+.hero .contact{font-size:14px;opacity:.85;line-height:1.9}
+.hero .contact strong{display:block;font-size:12px;letter-spacing:.12em;opacity:.7;margin-bottom:6px}
+
+/* section shell */
+section{padding-block:88px;border-top:1px solid var(--line)}
+.eyebrow{font-size:12px;letter-spacing:.16em;font-weight:700;color:var(--blue-deep);margin-bottom:14px}
+h2{font-size:clamp(25px,3.6vw,38px);line-height:1.3;font-weight:900;color:var(--ink);margin:0 0 10px;letter-spacing:-.02em}
+h2 .thin{font-weight:400;color:var(--muted)}
+.lead{font-size:16.5px;max-width:64ch;margin:0 0 36px}
+
+/* about */
+.about{display:grid;grid-template-columns:200px 1fr;gap:44px;align-items:center}
+.about .photo{border-radius:14px;overflow:hidden;background:var(--soft)}
+.about p{margin:0 0 16px}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:30px;margin-top:52px}
+.facts h3{font-size:12.5px;letter-spacing:.12em;color:var(--blue-deep);font-weight:700;margin:0 0 12px}
+.facts ul{margin:0;padding:0;list-style:none;font-size:14.5px;line-height:1.95}
+.facts li b{font-weight:700;color:var(--ink);margin-right:6px}
+.bar{margin-bottom:11px}
+.bar .t{display:flex;justify-content:space-between;font-size:13.5px;margin-bottom:5px}
+.bar .t span:last-child{color:var(--blue-deep);font-weight:700}
+.bar .track{height:7px;border-radius:99px;background:var(--line);overflow:hidden}
+.bar .fill{height:100%;background:var(--blue);border-radius:99px}
+
+/* strengths */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:22px}
+.card{border:1px solid var(--line);border-radius:14px;padding:26px 24px}
+.card h3{margin:0 0 10px;font-size:17px;color:var(--ink);font-weight:700}
+.card p{margin:0;font-size:14.5px;color:var(--body)}
+
+/* project cover */
+.cover{background:var(--blue);color:#fff;padding-block:76px}
+.cover .num{font-size:clamp(58px,11vw,112px);font-weight:900;line-height:.9;opacity:.28;margin-bottom:18px;letter-spacing:-.04em}
+.cover .tag{font-size:12px;letter-spacing:.16em;font-weight:700;opacity:.85;margin-bottom:10px}
+.cover h2{color:#fff;margin-bottom:8px}
+.cover .st{font-size:clamp(17px,2.6vw,25px);font-weight:400;opacity:.92;margin-bottom:30px}
+.cover .about-p{font-size:15px;opacity:.92;max-width:58ch;line-height:1.85}
+.cover .links{margin-top:22px;display:flex;flex-wrap:wrap;gap:10px}
+.cover .links a{font-size:13.5px;text-decoration:none;border:1px solid rgba(255,255,255,.55);padding:7px 15px;border-radius:999px}
+.cover .links a:hover{background:#fff;color:var(--blue-deep)}
+
+/* project body */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.split.wide-r{grid-template-columns:.92fr 1.08fr}
+.split p{margin:0 0 15px}
+.result{margin-top:28px}
+.result h3{font-size:13px;letter-spacing:.1em;color:var(--blue-deep);font-weight:700;margin:0 0 12px}
+.result ul{margin:0;padding-left:19px;font-size:15px;line-height:1.9}
+.result li{margin-bottom:5px}
+.shots{display:grid;gap:16px}
+.shots.two{grid-template-columns:1fr 1fr}
+.shots.four{grid-template-columns:1fr 1fr}
+figure{margin:0}
+figure img{border:1px solid var(--line);border-radius:10px;background:var(--soft)}
+figcaption{font-size:12.5px;color:var(--muted);margin-top:8px;line-height:1.6}
+.ph{border:1px dashed #C6CDDA;border-radius:10px;background:var(--soft);color:var(--muted);
+  font-size:13px;display:flex;align-items:center;justify-content:center;text-align:center;padding:40px 20px;min-height:150px}
+
+/* trouble block */
+.trouble{margin-top:56px;border-top:1px solid var(--line);padding-top:44px}
+.trouble>h3{font-size:13px;letter-spacing:.1em;color:var(--blue-deep);font-weight:700;margin:0 0 6px}
+.trouble>h4{font-size:21px;font-weight:900;color:var(--ink);margin:0 0 26px;letter-spacing:-.01em}
+.steps{display:grid;gap:26px}
+.step h5{margin:0 0 9px;font-size:15px;font-weight:700;color:var(--ink)}
+.step h5::before{content:"";display:inline-block;width:7px;height:7px;border-radius:2px;background:var(--blue);margin-right:9px;vertical-align:middle}
+.step p{margin:0 0 9px;font-size:15px}
+.step ol{margin:0;padding-left:20px;font-size:15px;line-height:1.9}
+.step ol li{margin-bottom:6px}
+.step ul{margin:0;padding-left:19px;font-size:15px;line-height:1.9}
+.tbl{width:100%;border-collapse:collapse;font-size:14.5px;margin:6px 0 4px}
+.tbl th,.tbl td{border-bottom:1px solid var(--line);padding:9px 12px;text-align:left;vertical-align:top}
+.tbl th{font-weight:700;color:var(--ink);background:var(--soft);font-size:13.5px}
+.scroll{overflow-x:auto}
+.note{background:var(--soft);border-left:3px solid var(--blue);padding:16px 20px;border-radius:0 8px 8px 0;font-size:14.5px;margin-top:8px}
+
+/* footer */
+footer{background:var(--blue);color:#fff;padding-block:92px}
+footer h2{color:#fff;margin-bottom:26px}
+footer .links{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:34px}
+footer .links a{text-decoration:none;font-size:14px;border:1px solid rgba(255,255,255,.55);padding:9px 18px;border-radius:999px}
+footer .links a:hover{background:#fff;color:var(--blue-deep)}
+footer .contact{font-size:14.5px;line-height:1.9;opacity:.9}
+
+@media(max-width:880px){
+  .about{grid-template-columns:1fr;gap:28px;align-items:start}
+  .about .photo{max-width:170px}
+  .split,.split.wide-r{grid-template-columns:1fr;gap:32px}
+  section{padding-block:64px}
+  .hero{padding-block:84px}
+}
+@media(max-width:520px){
+  .shots.two,.shots.four{grid-template-columns:1fr}
+  .wrap{padding-inline:18px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <b>권민석</b>
+    <a href="#about">소개</a>
+    <a href="#p1">01 쿠버네티스</a>
+    <a href="#p2">02 이슈</a>
+    <a href="#p3">03 커뮤니티</a>
+    <a href="#p4">04 Mallo</a>
+    <a href="#p5">05 Terraform</a>
+    <a href="#contact">연락처</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <h1>오직 성장만이 살길이다!<br>신입 권민석입니다.</h1>
+    <div class="sub">2021 - 2026 PORTFOLIO</div>
+    <div class="contact">
+      <strong>CONTACT</strong>
+      staralstjr@gmail.com<br>010 2399 3111
+    </div>
+  </div>
+</header>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="wrap">
+    <div class="eyebrow">ABOUT</div>
+    <h2>성장하는 <span style="color:var(--blue)">엔지니어</span> 권민석입니다</h2>
+    <div class="about" style="margin-top:34px">
+      <div class="photo"><img src="img/profile.jpg" alt="권민석"></div>
+      <div class="mt-10">
+        <p>안녕하세요. 권민석입니다. 한번 맡은 일은 끝까지 보고, 같은 실수를 반복하지 않기 위해 늘 기록합니다.</p>
+        <p>스타트업에서 한 서비스의 운영을 관리하고 개발하며, 사람들이 실제로 겪는 문제를 정의하고 해결하는 과정에서 꾸준히 성장해 왔습니다. 웹과 백엔드로 시작해 지금은 쿠버네티스 위에서 워크로드를 운영하고 있습니다.</p>
+        <p>자동화 파이프라인을 돌리다 메모리 과부하와 IP 차단 같은 문제를 겪으면서, 코드 바깥에서 생기는 문제에 관심을 갖게 됐습니다. AWS SAA를 취득한 뒤에도 인프라 프로젝트를 스스로 이어 가고 있습니다.</p>
+      </div>
+    </div>
+
+    <div class="facts">
+      <div>
+        <h3>PROFILE</h3>
+        <ul>
+          <li><b>생년월일</b>2002.04.23</li>
+          <li><b>Tel</b>010-2399-3111</li>
+          <li><b>Email</b>staralstjr@gmail.com</li>
+          <li><b>거주지</b>서울특별시 구로구 오류로 8길 90 402호</li>
+        </ul>
+      </div>
+      <div>
+        <h3>EDUCATION</h3>
+        <ul>
+          <li><b>2021</b>창원신월고등학교 졸업</li>
+          <li><b>2021</b>성공회대학교 입학</li>
+          <li><b>2027</b>성공회대학교 졸업 예정</li>
+          <li><b>전공</b>IT융합자율학부<br>(SW 4.30/4.5 - 컴퓨터공학 4.25/4.5)</li>
+        </ul>
+      </div>
+      <div>
+        <h3>AWARDS</h3>
+        <ul>
+          <li><b>2025</b>성공회대학교 IT 경진대회 은상 및 인기상</li>
+          <li><b>2025</b>성공회대학교 창업 아이디어 경진대회 장려상</li>
+          <li><b>2025</b>GoodWin Incubating 최우수 창업동아리 선정</li>
+          <li><b>2026</b>AWS Certified Solutions Architect Associate</li>
+        </ul>
+      </div>
+      <div>
+        <h3>SKILL</h3>
+        <div class="bar"><div class="t"><span>Kubernetes, Argo CD</span><span>80</span></div><div class="track"><div class="fill" style="width:80%"></div></div></div>
+        <div class="bar"><div class="t"><span>Docker</span><span>80</span></div><div class="track"><div class="fill" style="width:80%"></div></div></div>
+        <div class="bar"><div class="t"><span>Python</span><span>85</span></div><div class="track"><div class="fill" style="width:85%"></div></div></div>
+        <div class="bar"><div class="t"><span>AWS, NCP</span><span>75</span></div><div class="track"><div class="fill" style="width:75%"></div></div></div>
+        <div class="bar"><div class="t"><span>PostgreSQL</span><span>75</span></div><div class="track"><div class="fill" style="width:75%"></div></div></div>
+        <div class="bar"><div class="t"><span>Next.js</span><span>85</span></div><div class="track"><div class="fill" style="width:85%"></div></div></div>
+      </div>
+    </div>
+
+    <div class="facts" style="margin-top:36px">
+      <div style="grid-column:1/-1">
+        <h3>MORE</h3>
+        <div class="scroll">
+        <table class="tbl">
+          <tr><th style="width:110px">운영</th><td>NKS 워크로드 3종을 Argo CD GitOps로 운영, SealedSecret 기반 시크릿 관리, NCP 콘솔(노드풀, 오브젝트 스토리지)</td></tr>
+          <tr><th>클라우드</th><td>AWS (SAA-C03 보유, Terraform으로 3-tier 구성 및 검증), NCP (파이프라인 이관, 오브젝트 스토리지)</td></tr>
+          <tr><th>데이터</th><td>PostgreSQL 스키마 설계, 증분 처리, 적재 전 검증 / pandas, scikit-learn (28만 건 정제와 군집, 회귀 실습)</td></tr>
+          <tr><th>기타</th><td>Playwright, Claude API/CLI, MCP 연동, Linux, TCP/IP, HTTP (장애 원인 분리에 활용)</td></tr>
+        </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STRENGTHS -->
+<section>
+  <div class="wrap">
+    <div class="eyebrow">STRENGTH</div>
+    <h2>권민석, <span style="color:var(--blue)">어떤 능력을</span> 가지고 있을까?</h2>
+    <p class="lead">데이터를 모아 정제하고 쌓는 쪽과, 그 데이터를 꺼내 쓰는 화면 쪽을 모두 만들어 봤습니다. 그래서 어떤 구조로 저장해야 나중에 꺼내 쓰기 좋은지를 함께 생각합니다.</p>
+    <div class="cards">
+      <div class="card">
+        <h3>장애를 층으로 나눠 본다</h3>
+        <p>두 번의 장애가 모두 코드가 아니라 자원과 네트워크 정책에서 왔습니다. 그 뒤로는 문제를 만나면 애플리케이션 쪽인지 그 아래쪽인지부터 나눠 봅니다.</p>
+      </div>
+      <div class="card">
+        <h3>네트워크와 CS 기본기</h3>
+        <p>운영체제, 네트워크프로그래밍, 데이터통신, 데이터베이스, 알고리즘을 A+로 이수했습니다. 5학기 연속 성적 우수 장학금을 받았습니다.</p>
+      </div>
+      <div class="card">
+        <h3>기록하고 공유한다</h3>
+        <p>문제를 푸는 것만큼 중요한 것이 다음 사람이 알아볼 수 있게 남기는 일이라고 생각합니다. 매니페스트와 문서에 판단 근거를 남기고 Slack으로 결과를 공유합니다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROJECT 1 ===== -->
+<div class="cover" id="p1">
+  <div class="wrap">
+    <div class="num">01</div>
+    <div class="tag">PROJECT.1</div>
+    <h2>쿠버네티스 이관과 GitOps 운영 체계</h2>
+    <div class="st">VM crontab에서 NKS + Argo CD로</div>
+    <p class="about-p">VM에서 crontab으로 돌던 배치와 상주 봇을 네이버 클라우드 쿠버네티스(NKS)로 옮기고, Argo CD 기반 GitOps 배포 체계 위에서 운영한 실무 프로젝트. 컨테이너 이미지 빌드부터 배포, 시크릿 관리, 장애 대응까지 단독 수행했습니다.</p>
+    <div class="links"><a>2026.08 ~ 2026.09</a><a>단독 수행</a></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="split wide-r">
+      <div>
+        <div class="eyebrow">OVERVIEW</div>
+        <p>회사에는 이미 NKS와 Argo CD 기반 배포 인프라가 있었지만, 제가 만든 파이프라인만 그 밖에서 VM crontab으로 돌고 있었습니다. 서버에 SSH로 들어가 스크립트를 고치는 방식이라 배포 이력이 남지 않았고, 장비에 종속돼 복구도 어려웠습니다. 기존 GitOps 체계 안으로 편입시켰습니다.</p>
+        <p>세 워크로드를 옮겼습니다. 커뮤니티 게시 배치는 CronJob, 상시 대기하는 Slack 봇은 Deployment, 창업 지원 서비스 Mallo는 웹 Deployment와 뉴스레터 CronJob으로 구성했습니다.</p>
+        <p>컨테이너화가 가장 까다로웠습니다. 파이프라인이 Python과 Node.js CLI, Playwright Chromium을 모두 요구해 단일 이미지에 담아야 했습니다. Playwright 공식 베이스 이미지를 골라 시스템 라이브러리 의존성을 베이스에서 해결했고, requirements.txt를 앱 코드보다 먼저 COPY해 코드가 바뀌어도 설치 레이어를 재사용하도록 했습니다. 개발은 Apple Silicon, 운영은 amd64라 buildx로 크로스 빌드했습니다.</p>
+
+        <div class="result">
+          <h3>성과</h3>
+          <ul>
+            <li>워크로드 3종을 NKS로 이관하고, 공용 인프라 저장소에 PR 13건을 반영했습니다</li>
+            <li>배포가 Git 커밋과 Argo CD 자동 동기화로 바뀌어 수동 SSH 배포가 사라졌습니다</li>
+            <li>시크릿 3종(앱 계정과 토큰, SSH 개인키, 터널 인증키)을 봉인해 저장소에 평문 없이 관리합니다</li>
+            <li>진행 상태를 파드 생애와 분리해 오브젝트 스토리지로 외부화했습니다</li>
+            <li>커뮤니티 게시 배치는 하루 3회 무인 실행 중입니다</li>
+          </ul>
+        </div>
+      </div>
+      <div class="shots">
+        <figure>
+          <img src="img/newsboy-community-healthy.png" alt="Argo CD Application 리소스 트리" loading="lazy" decoding="async">
+          <figcaption>Argo CD Application 상세. Healthy와 Synced 상태, SealedSecret이 Secret으로 복호화되는 흐름, CronJob에서 파생된 Job과 Pod가 한 화면에 보입니다. 마지막 동기화가 제 PR 머지로 찍혀 있습니다.</figcaption>
+        </figure>
+        <div class="shots two">
+          <figure><img src="img/newsboy-community-publisher.png" alt="community publisher" loading="lazy" decoding="async"><figcaption>커뮤니티 게시 배치 (CronJob)</figcaption></figure>
+          <figure><img src="img/newsboy-issue-desk.png" alt="issue desk" loading="lazy" decoding="async"><figcaption>이슈 생성과 Slack 봇</figcaption></figure>
+          <figure><img src="img/mallo-web.png" alt="mallo web" loading="lazy" decoding="async"><figcaption>Mallo 웹과 뉴스레터 CronJob</figcaption></figure>
+          <figure><img src="img/newsboy-web-api.png" alt="newsboy web api" loading="lazy" decoding="async"><figcaption>같은 클러스터의 다른 애플리케이션</figcaption></figure>
+        </div>
+      </div>
+    </div>
+
+    <!-- TS 1 -->
+    <div class="trouble">
+      <h3>트러블슈팅 / 의사결정 1</h3>
+      <h4>배포 체계 설계 — 클러스터에 붙지 못하는 상태에서 배포하기</h4>
+      <div class="split wide-r">
+        <div class="steps">
+          <div class="step">
+            <h5>문제</h5>
+            <p>GitOps는 모든 것을 Git에 선언해야 하는데, DB 접속 정보와 토큰은 평문으로 올릴 수 없었습니다. 쿠버네티스 기본 Secret은 base64 인코딩일 뿐이라 그대로 커밋하면 유출입니다.</p>
+            <p>게다가 제 로컬 kubectl은 회사 클러스터에 접근이 막혀 있어(401), 클러스터에 붙어서 봉인할 수도 없었습니다. VM 스크립트가 손으로 처리하던 중복 실행 방지와 로그 회전, 재시작 루프도 옮길 방법이 필요했습니다.</p>
+          </div>
+          <div class="step">
+            <h5>조치</h5>
+            <ol>
+              <li>SealedSecret을 도입해 클러스터 공개키로 암호화한 봉인본만 커밋했습니다. 공개키만 따로 받아 오프라인으로 봉인했고, 평문이 디스크에 남지 않도록 파이프라인으로 연결했습니다.</li>
+              <li>VM 스캐폴딩을 쿠버네티스 기본 기능으로 치환했습니다.</li>
+              <li>워크로드 성격에 따라 리소스를 나눴습니다. 배치는 실행 후 종료되므로 CronJob이고 Service가 필요 없으며, 연결을 유지하는 봇은 Deployment입니다.</li>
+              <li>실제 클러스터에 올리기 전, 로컬 kind 클러스터에 Argo CD와 SealedSecret 컨트롤러를 띄워 전 과정을 리허설했습니다.</li>
+            </ol>
+            <div class="scroll">
+            <table class="tbl">
+              <tr><th>VM (기존)</th><th>쿠버네티스 (이관 후)</th></tr>
+              <tr><td>flock 중복 실행 방지</td><td>concurrencyPolicy: Forbid</td></tr>
+              <tr><td>crontab 스케줄</td><td>CronJob schedule</td></tr>
+              <tr><td>로그 파일 회전</td><td>stdout</td></tr>
+              <tr><td>while-true 재시작 루프</td><td>Deployment restartPolicy</td></tr>
+              <tr><td>.env 파일</td><td>ConfigMap + SealedSecret</td></tr>
+            </table>
+            </div>
+          </div>
+          <div class="step">
+            <h5>결과</h5>
+            <p>매니페스트만 보고도 무엇이 언제 어떻게 도는지 알 수 있는 구조가 됐고, 배포는 PR 머지로 끝납니다. 시크릿은 봉인본만 저장소에 남습니다.</p>
+          </div>
+          <div class="step">
+            <h5>배운 점</h5>
+            <p>배포를 명령이 아니라 선언으로 바꾸면 추적과 자가 치유가 따라옵니다. 리소스를 고르는 일은 복사가 아니라 워크로드 성격을 판단하는 일이었습니다.</p>
+          </div>
+        </div>
+        <div class="shots">
+          <figure>
+            <img src="img/nks-infra-pr.png" alt="인프라 저장소 PR" loading="lazy" decoding="async">
+            <figcaption>공용 인프라 저장소에 올린 PR. 매니페스트 변경이 곧 배포이므로 리뷰와 이력이 그대로 남습니다.</figcaption>
+          </figure>
+          <figure>
+            <img src="img/nks-objectstorage.png" alt="오브젝트 스토리지" loading="lazy" decoding="async">
+            <figcaption>오브젝트 스토리지로 외부화한 진행 상태. 아침 파드가 수집한 큐를 점심과 저녁 파드가 읽습니다.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+
+    <!-- TS 2 -->
+    <div class="trouble">
+      <h3>트러블슈팅 / 의사결정 2</h3>
+      <h4>표준에서 벗어난 결정과 무중단 컷오버</h4>
+      <div class="steps">
+        <div class="step">
+          <h5>문제</h5>
+          <p>회사 배치 표준은 재시도 3회였는데, 이 워크로드는 한 번 실행에 LLM 호출 비용이 큽니다. 3회 재시도는 실패 시 비용이 세 배가 된다는 뜻이었습니다.</p>
+          <p>스케줄도 문제였습니다. CronJob의 schedule은 기본 UTC이고, timeZone 필드는 쿠버네티스 1.27 이상에서만 동작해 클러스터 버전에 의존하게 됩니다.</p>
+          <p>컷오버는 더 위험했습니다. 이 배치는 결과를 실제로 기록하기 때문에, VM과 쿠버네티스가 동시에 돌면 같은 내용이 두 번 올라갑니다.</p>
+        </div>
+        <div class="step">
+          <h5>조치</h5>
+          <ol>
+            <li>재시도 횟수를 낮췄습니다. 게시 작업은 재시도하면 중복 게시 위험이 있고 LLM 호출 비용도 큽니다. 한 사이클 실패는 다음 사이클이 흡수하므로, 표준을 따르지 않은 이유를 매니페스트 주석에 남겼습니다.</li>
+            <li>timeZone 필드 대신 UTC로 환산해 적었습니다. 한국은 서머타임이 없어 UTC+9로 연중 고정이므로 환산이 안전하고, 클러스터 버전에 의존하지 않습니다. 가독성은 주석으로 보완했습니다.</li>
+            <li>회차별로 CronJob을 따로 두지 않고 하나로 합쳤습니다. concurrencyPolicy는 같은 CronJob 안에서만 겹침을 막기 때문에, 나눠 두면 아침 작업이 늦게 끝났을 때 점심 작업이 겹쳐 뜹니다.</li>
+            <li>컷오버는 단계로 나눴습니다. CronJob을 suspend 상태로 먼저 올리고, 일회성 검증 Job으로 실제 시각대 실행을 확인한 뒤, 검증 Job을 지우고 VM crontab을 먼저 제거한 다음 CronJob을 켰습니다. 짧은 공백을 감수하고 이중 기록을 원천 차단했습니다.</li>
+          </ol>
+        </div>
+        <div class="step">
+          <h5>결과</h5>
+          <p>이중 발행 없이 전환을 마쳤고, 재시도 정책과 스케줄 표기는 근거를 남긴 채 표준과 다르게 유지됩니다.</p>
+        </div>
+        <div class="step">
+          <h5>배운 점</h5>
+          <p>팀 표준은 지키는 것이 기본이지만, 워크로드 특성상 다르게 해야 한다면 근거를 남기고 설득하는 편이 낫습니다. 운영 중인 작업을 옮기는 일은 만드는 일과 다릅니다. 순서를 정하는 것이 절반이었습니다.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- TS 3 -->
+    <div class="trouble">
+      <h3>트러블슈팅 / 의사결정 3</h3>
+      <h4>운영 중 장애와 관측의 한계</h4>
+      <div class="split wide-r">
+        <div class="steps">
+          <div class="step">
+            <h5>문제</h5>
+            <p>클러스터를 kubectl로 직접 조작할 수 없어, 관측과 조작을 전부 Argo CD와 Git으로만 해야 했습니다. 그런데 Argo CD가 Healthy로 보인다고 실제로 일이 잘 된 것은 아니었습니다. 파드가 종료 코드 0으로 끝나면 내부에서 실패했어도 Healthy로 표시되고, 완료된 파드의 로그는 사라져 원인을 볼 수도 없었습니다.</p>
+            <p>운영 중 세 가지 장애를 겪었습니다. 외부로 나가는 경로가 몇 주 뒤 끊겼고, 터널 파드가 CrashLoopBackOff에 빠졌으며, 뉴스 생성과 게시가 동시에 멈췄습니다.</p>
+          </div>
+          <div class="step">
+            <h5>조치</h5>
+            <ol>
+              <li>첫 번째는 터널 노드키 만료였습니다. 화면에는 연결됨으로 보였지만 실제로는 끊겨 있어, 직접 핑으로 확인한 뒤 재인증하고 서버 노드의 키 만료를 끄는 쪽으로 정리했습니다.</li>
+              <li>두 번째는 터널 인증키 만료였습니다. 공개키로 SealedSecret을 재봉인해 교체했습니다.</li>
+              <li>세 번째는 노드 메모리 압박이었습니다. 파드가 축출되면서 두 작업이 함께 죽었습니다. 고메모리 타입 노드풀을 증설하는 것으로 정리됐고, 저는 실측을 근거로 파드의 메모리 요청량을 조정했습니다. 게시 1회분의 실질 피크가 약 1.9GB이고 그중 브라우저가 1.84GB였는데, 요청량은 실사용보다 낮게 잡아 노드 용량을 선점하지 않도록 했습니다.</li>
+              <li>관측 갭은 코드로 메웠습니다. 실패 시 사유와 화면을 오브젝트 스토리지에 덤프하도록 보강해, 파드가 사라져도 증거가 남게 했습니다.</li>
+            </ol>
+          </div>
+          <div class="step">
+            <h5>결과</h5>
+            <p>세 장애 모두 복구했고, 실패 원인을 사후에 확인할 수 있는 경로를 만들었습니다.</p>
+            <div class="note">점검 과정에서 상태 저장이 전체 성공 조건에 묶여 있어, 일부 채널만 실패해도 큐와 이력이 기록되지 않는다는 것을 뒤늦게 발견했습니다. 결과 알림과 상태 저장을 분리하는 쪽으로 고치고 있습니다.</div>
+          </div>
+          <div class="step">
+            <h5>배운 점</h5>
+            <p>보이는 상태와 실제 상태는 다를 수 있습니다. 연결됨으로 표시되는 화면보다 직접 확인한 응답이 정확했습니다. 도구가 주는 Healthy는 리소스가 정상이라는 뜻이지 일이 잘 됐다는 뜻이 아닙니다. 관측이 부족하면 남는 기록을 스스로 만들어야 합니다.</p>
+          </div>
+        </div>
+        <div class="shots">
+          <figure>
+            <img src="img/nks-nodepool.png" alt="NKS 노드풀" loading="lazy" decoding="async">
+            <figcaption>NKS 노드풀 구성. 일반 노드풀과 고메모리 노드풀을 함께 운용하며, 클러스터 합계는 노드 3대와 메모리 80GB입니다.</figcaption>
+          </figure>
+          <figure>
+            <img src="img/mallo-web-logs.png" alt="Argo CD 로그" loading="lazy" decoding="async">
+            <figcaption>실행 중인 파드의 로그는 Argo CD에서 확인합니다. 완료된 파드의 로그는 남지 않아, 실패 증거를 따로 남기도록 보강했습니다.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROJECT 2 ===== -->
+<div class="cover" id="p2">
+  <div class="wrap">
+    <div class="num">02</div>
+    <div class="tag">PROJECT.2</div>
+    <h2>이슈 페이지 자동화 파이프라인</h2>
+    <div class="st">기획과 개발, 수집과 정제와 적재의 설계</div>
+    <p class="about-p">뉴스를 제공하는 언론사 서비스에서 기존 언론사와 차별점이 필요했습니다. 사건을 검색하면 위키 형식이나 파편화된 기사로만 정보를 얻어야 했기에, 한 페이지로 사건을 이해할 수 있는 서비스를 기획하고 개발했습니다.</p>
+    <div class="links"><a href="https://newsboy.news/news-list/issue" target="_blank" rel="noopener">운영 중인 서비스 보기</a></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="split">
+      <div>
+        <div class="eyebrow">OVERVIEW</div>
+        <p>흩어진 뉴스를 사건 단위로 묶어 전말과 인물 발언, 시간순 전개, 커뮤니티 반응을 자동 생성하는 파이프라인을 단독으로 설계하고 구현했습니다.</p>
+        <p>운영 DB에서 읽기 전용으로 원천 데이터를 가져와 정제한 뒤, 분리된 결과 DB의 22개 테이블에 적재합니다. 기획과 와이어프레임부터 DB 설계, 서버 환경 구성, 백엔드와 화면 개발까지 디자인을 뺀 전 과정을 맡았습니다.</p>
+        <div class="result">
+          <h3>성과</h3>
+          <ul>
+            <li>현재 62개 이슈가 서비스에 공개되어 하루 두 번 자동으로 갱신됩니다</li>
+            <li>결과물은 4개 영역으로 구성되며 22개 테이블에 적재됩니다</li>
+            <li>새 데이터가 붙은 이슈만 갱신하도록 바꿔 작업량이 유입량에만 비례합니다</li>
+            <li>전수 재검사에서 시기가 맞지 않는 기사 네 건을 잡아냈습니다</li>
+            <li>운영 DB는 읽기 전용으로만 접근해 서비스 데이터를 보호했습니다</li>
+            <li>Slack으로 이슈를 생성하고 기존 이슈에 붙은 기사를 확인할 수 있습니다</li>
+          </ul>
+        </div>
+      </div>
+      <div class="shots two">
+        <figure><img src="img/issue.png" alt="이슈 목록" loading="lazy" decoding="async"><figcaption>이슈 목록 화면</figcaption></figure>
+        <figure><img src="img/issue2.png" alt="이슈 상세" loading="lazy" decoding="async"><figcaption>이슈 상세 화면</figcaption></figure>
+      </div>
+    </div>
+
+    <div class="trouble">
+      <h3>트러블슈팅 / 의사결정</h3>
+      <h4>서비스 데이터를 지키면서 무인으로 돌리기</h4>
+      <div class="split wide-r">
+        <div class="steps">
+          <div class="step">
+            <h5>문제</h5>
+            <ul>
+              <li>운영 DB에 파이프라인이 쓰기까지 하게 두면, 배치 실수 한 번에 서비스 데이터가 손상될 수 있었습니다</li>
+              <li>매 사이클마다 이슈 전체를 다시 돌리면 데이터가 늘수록 시간과 연산 비용이 같이 커집니다</li>
+              <li>모델이 만든 문장을 그대로 적재하면 원문에 없는 내용이 독자에게 나갈 수 있었습니다</li>
+            </ul>
+          </div>
+          <div class="step">
+            <h5>조치</h5>
+            <ol>
+              <li>운영 DB는 읽기 전용 계정으로만 접근하고, 계정 권한과 별개로 코드에서도 쓰기 질의를 막았습니다</li>
+              <li>결과물은 분리된 PostgreSQL 22개 테이블에만 적재하도록 나눴습니다</li>
+              <li>전체 재처리를 버리고, 새 데이터가 붙은 이슈만 갱신하는 증분 처리로 전환했습니다</li>
+              <li>적재 앞에 검증 단계를 두어 원문에 없는 문장과 기간을 벗어난 날짜를 걸러냈습니다</li>
+            </ol>
+          </div>
+          <div class="step">
+            <h5>결과</h5>
+            <p>작업량이 전체 규모가 아니라 그날 들어온 데이터 양에만 비례하게 됐습니다. 전수 재검사에서 시기가 맞지 않는 기사 네 건을 잡아냈고, 현재 62개 이슈가 하루 두 번 갱신됩니다.</p>
+          </div>
+          <div class="step">
+            <h5>배운 점</h5>
+            <p>장애를 기다렸다가 고치는 것보다, 처음부터 실수해도 서비스 DB는 살리는 경계를 만드는 일이 중요했습니다. 모델 출력을 믿지 않고 코드가 검증하는 지점을 정해 두면 무인 운영에서도 결과를 신뢰할 수 있었습니다.</p>
+          </div>
+        </div>
+        <div class="shots">
+          <figure><img src="img/issue3.png" alt="파이프라인 설계" loading="lazy" decoding="async"><figcaption>파이프라인 설계와 Slack 운영 리포트</figcaption></figure>
+          <figure><img src="img/issue4.png" alt="모바일 화면" loading="lazy" decoding="async"><figcaption>모바일에서 본 이슈 상세</figcaption></figure>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROJECT 3 ===== -->
+<div class="cover" id="p3">
+  <div class="wrap">
+    <div class="num">03</div>
+    <div class="tag">PROJECT.3</div>
+    <h2>커뮤니티 자동화 파이프라인</h2>
+    <div class="st">반복 작업의 자동화와 클라우드 이관</div>
+    <p class="about-p">커뮤니티 채널에 콘텐츠를 올리던 반복 작업을 배치 파이프라인으로 자동화하고, 로컬 장비 과부하와 IP 차단 문제를 겪으면서 실행 환경을 네이버 클라우드로 옮긴 경험입니다.</p>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="split">
+      <div>
+        <div class="eyebrow">OVERVIEW</div>
+        <p>뉴스보이 기사를 커뮤니티에 올려 서비스 유입을 만드는 일을 기획하고 자동화했습니다. 수집과 분석, 리라이트, 게시로 작동하는 배치 파이프라인으로 운영했으며 아침과 점심, 저녁에 실행되도록 했습니다. Slack Webhook과 연동해 실행 결과와 장애를 상시 확인합니다.</p>
+        <div class="result">
+          <h3>성과</h3>
+          <ul>
+            <li>커뮤니티 채널 4개를 상시 운영했습니다</li>
+            <li>건당 처리 시간은 약 10분입니다</li>
+            <li>어디에서나 같은 명령으로 동일하게 동작하도록 기술화했습니다</li>
+            <li>운영 기간 제재 이슈는 0건이었습니다</li>
+            <li>SEO 개선과 병행한 뒤 구글 서치 콘솔 기준 일일 방문자가 158명에서 1,759명까지 올랐습니다</li>
+          </ul>
+        </div>
+        <p style="margin-top:22px;font-size:14.5px;color:var(--muted)">이 파이프라인은 이후 쿠버네티스로 이관했습니다. 자세한 내용은 프로젝트 1에 있습니다.</p>
+      </div>
+      <div class="shots">
+        <figure><img src="img/community.png" alt="Slack 실행 결과" loading="lazy" decoding="async"><figcaption>Slack으로 받는 실행 결과. 수집과 게시 완료가 채널별로 남습니다.</figcaption></figure>
+        <figure><img src="img/community2.png" alt="게시 목록" loading="lazy" decoding="async"><figcaption>실제 게시된 글 목록</figcaption></figure>
+      </div>
+    </div>
+
+    <div class="trouble">
+      <h3>트러블슈팅 / 의사결정</h3>
+      <h4>코드가 아니라 자원과 네트워크가 원인이었던 두 번의 장애</h4>
+      <div class="steps">
+        <div class="step">
+          <h5>문제</h5>
+          <ul>
+            <li>사무실 장비에서 LLM 호출이 한 번에 2.5GB 가까이 점유해, 같은 장비의 다른 배치들이 간헐적으로 멈췄습니다</li>
+            <li>클라우드로 옮긴 뒤에는 데이터센터 대역이 차단되어 게시가 전부 실패했습니다</li>
+          </ul>
+        </div>
+        <div class="step">
+          <h5>조치</h5>
+          <ol>
+            <li>실패하는 작업이 매번 달라 처음에는 각 작업의 코드를 의심했습니다. 실행 시각을 대조해 보니 중단 구간이 전부 자동화가 도는 시간대와 겹쳤고, 연산을 네이버 클라우드로 분리했습니다.</li>
+            <li>연산은 클라우드에 두고, 외부로 나가는 브라우저 트래픽만 SSH 터널로 사무실 회선을 거치게 경로를 나눴습니다.</li>
+            <li>브라우저 제어용 로컬 포트까지 프록시를 타 응답이 느려져, 그 포트를 프록시 예외로 두었습니다.</li>
+          </ol>
+        </div>
+        <div class="step">
+          <h5>결과</h5>
+          <p>세 번째 시도에서 두 문제가 동시에 풀렸고, 파이프라인을 다시 가동했습니다.</p>
+        </div>
+        <div class="step">
+          <h5>배운 점</h5>
+          <p>오류 원인이 코드가 아니라 자원과 네트워크일 수 있다는 점입니다. 그리고 알림이 없으면 장애를 늦게 압니다. Slack으로 실행 결과를 밀어 보내, 찾아가지 않아도 실패가 보이게 만들었습니다.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROJECT 4 ===== -->
+<div class="cover" id="p4">
+  <div class="wrap">
+    <div class="num">04</div>
+    <div class="tag">PROJECT.4</div>
+    <h2>Mallo</h2>
+    <div class="st">창업 지원 AI 서비스</div>
+    <p class="about-p">말로 설명하면 사업계획서가 만들어지는 서비스. 음성 전사부터 문서 생성과 내려받기, 뉴스레터 정기 발송 배치와 결제까지 전 구간을 개발했습니다.</p>
+    <div class="links"><a href="https://mallo.ai.kr" target="_blank" rel="noopener">운영 중인 서비스 보기</a></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="split">
+      <div>
+        <div class="eyebrow">OVERVIEW</div>
+        <p>창업자가 말한 내용으로 사업계획서를 만들어 주는 서비스입니다. 사업계획서 생성과 맞춤 뉴스레터, 홍보 콘텐츠 자동 제작 세 상품을 운영합니다.</p>
+        <p>음성 전사부터 문서 생성과 내려받기, 구독 결제와 환불 웹훅까지 서비스 전 구간을 맡았습니다. 뉴스레터는 쿠버네티스 CronJob이 정해진 시각에 호출하고, 사내 뉴스 검색 서비스를 MCP로 연동해 근거를 확보합니다.</p>
+        <div class="result">
+          <h3>성과</h3>
+          <ul>
+            <li>사업계획서와 뉴스레터, 홍보 콘텐츠 세 상품을 결제까지 붙여 상용화 단계에 올렸습니다</li>
+            <li>근거를 정부 공고와 뉴스, 보도자료, 공시에서 모아 붙입니다</li>
+            <li>한글과 워드, PDF 내려받기를 붙여 사업계획서를 바로 제출할 수 있게 만들었습니다</li>
+            <li>이슈 파이프라인에서 쓰던 정기 실행 구조를 그대로 옮겨 세 번째 구축이 가장 빨랐습니다</li>
+            <li>아직 실사용자가 없어 발송은 본인 계정으로 검증하는 단계입니다</li>
+          </ul>
+        </div>
+      </div>
+      <div class="shots two">
+        <figure><img src="img/mallo.png" alt="뉴스레터 설정" loading="lazy" decoding="async"><figcaption>뉴스레터 수신 설정</figcaption></figure>
+        <figure><img src="img/mallo2.png" alt="홍보 콘텐츠" loading="lazy" decoding="async"><figcaption>홍보 콘텐츠 제작</figcaption></figure>
+        <figure><img src="img/mallo3.png" alt="문서함" loading="lazy" decoding="async"><figcaption>사업계획서와 문서함</figcaption></figure>
+        <figure><img src="img/mallo4.png" alt="발송 결과" loading="lazy" decoding="async"><figcaption>텔레그램으로 발송된 뉴스레터</figcaption></figure>
+      </div>
+    </div>
+
+    <div class="trouble">
+      <h3>트러블슈팅 / 의사결정</h3>
+      <h4>정기 발송에서 중복과 부분 실패 다루기</h4>
+      <div class="steps">
+        <div class="step">
+          <h5>문제</h5>
+          <ul>
+            <li>사람마다 하루 한 통이라는 제약이 있어, 크론이 겹쳐 돌거나 파드가 둘이면 같은 사람에게 두 번 발송될 수 있었습니다</li>
+            <li>한 통을 만드는 데 모델 왕복이 두 번 필요해, 한 요청에 여러 명을 몰면 로드밸런서가 먼저 끊었습니다</li>
+            <li>지원사업 공고와 정책은 기사가 아니라 공고문이라 뉴스 검색으로는 찾을 수 없었습니다</li>
+          </ul>
+        </div>
+        <div class="step">
+          <h5>조치</h5>
+          <ol>
+            <li>보내기 전에 발송 자리를 먼저 확보해 중복 발송을 막았습니다</li>
+            <li>한 번에 소수만 처리하고 나머지는 다음 주기가 가져가도록 나눴습니다</li>
+            <li>한 사람이 실패해도 기록만 남기고 나머지 발송은 그대로 진행되도록 격리했습니다</li>
+            <li>토픽별로 출처를 갈라, 기사로 찾을 수 있는 것만 사내 서비스로 보내고 나머지는 검색에 남겼습니다</li>
+            <li>결제 웹훅에 서명 헤더가 없어 주소에 비밀값을 두어 호출을 제한했고, 처리에 실패하면 성공 응답 대신 오류 코드를 돌려주어 재발송이 가능하게 했습니다</li>
+          </ol>
+        </div>
+        <div class="step">
+          <h5>결과</h5>
+          <p>연동이 끊겨도 검색으로 대체해 뉴스레터가 멈추지 않게 했고, 출처는 모델이 아니라 코드가 붙이도록 했습니다.</p>
+        </div>
+        <div class="step">
+          <h5>배운 점</h5>
+          <p>중복 방지와 배치 크기 조절, 부분 실패 격리는 워크플로 도구가 다루는 문제와 같은 성격이었습니다. 완벽한 출처보다 발송이 멈추지 않는 쪽을 택하는 것도 설계 판단이라는 것을 배웠습니다.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROJECT 5 ===== -->
+<div class="cover" id="p5">
+  <div class="wrap">
+    <div class="num">05</div>
+    <div class="tag">PROJECT.5 &nbsp;/&nbsp; 학습 프로젝트</div>
+    <h2>AWS 3-Tier 망분리 인프라</h2>
+    <div class="st">AWS 실습 with Terraform</div>
+    <p class="about-p">AWS SAA로 배운 VPC와 서브넷, ALB, Auto Scaling, RDS 개념을 Terraform으로 직접 구성한 학습 프로젝트입니다. 이틀간 진행했습니다.</p>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="split">
+      <div>
+        <div class="eyebrow">OVERVIEW</div>
+        <p>10.0.0.0/16 VPC를 Public과 App, DB 3계층으로 나누고 서울 리전 두 가용 영역에 서브넷을 배치했습니다. App과 DB는 private 서브넷에 두어 외부 직접 접근을 막고, App의 아웃바운드만 NAT Gateway로 열었습니다.</p>
+        <p>자격증으로만 익힌 구성을 검증 가능한 인프라로 옮겨 본 것이 목적이었습니다. 수동으로 서버를 올리면 같은 환경을 반복해서 만들고 지우기 어려워, 전부 코드로 정의했습니다.</p>
+        <div class="result">
+          <h3>검증한 것</h3>
+          <ul>
+            <li>로드밸런싱: ALB 접속 시 두 가용 영역의 서버가 교대로 응답</li>
+            <li>자가 치유: App을 강제 종료한 뒤 Auto Scaling이 인스턴스를 다시 생성</li>
+            <li>DB 격리: 외부에서 RDS 접속 시 타임아웃</li>
+          </ul>
+        </div>
+        <p style="margin-top:22px;font-size:14.5px;color:var(--muted)">실제 트래픽 부하 테스트와 과금, 스케일 정책까지는 가지 못했습니다. 다음에는 CPU 기반 스케일 정책과 GitHub Actions의 terraform plan부터 붙이려 합니다.</p>
+      </div>
+      <div class="shots two">
+        <figure><img src="img/3tier.png" alt="VPC 구성" loading="lazy" decoding="async"><figcaption>VPC와 서브넷 구성</figcaption></figure>
+        <figure><img src="img/3tier2.png" alt="ALB 타겟 그룹" loading="lazy" decoding="async"><figcaption>ALB 타겟 그룹 상태</figcaption></figure>
+        <figure><img src="img/3tier3.png" alt="RDS" loading="lazy" decoding="async"><figcaption>private 서브넷의 RDS</figcaption></figure>
+        <figure><img src="img/3tier4.png" alt="보안 그룹" loading="lazy" decoding="async"><figcaption>계층 간 접근을 제한한 보안 그룹</figcaption></figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <h2>감사합니다.<br>잘 부탁드립니다!</h2>
+    <div class="links">
+      <a href="https://github.com/staralstjr" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://newsboy.news/news-list/issue" target="_blank" rel="noopener">뉴스보이 이슈</a>
+      <a href="https://mallo.ai.kr" target="_blank" rel="noopener">Mallo</a>
+      <a href="https://blog.naver.com/staralstjr" target="_blank" rel="noopener">Blog</a>
+    </div>
+    <div class="contact">
+      staralstjr@gmail.com<br>
+      010 2399 3111<br>
+      <span style="opacity:.7">2025 - 2026 Portfolio</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
