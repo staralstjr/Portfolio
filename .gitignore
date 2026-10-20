@@ -1,2 +1,9 @@
 .DS_Store
 .vercel
+node_modules
+.next
+next-env.d.ts
+*.tsbuildinfo
+
+# 제출용 PDF는 로컬에만 둔다
+*.pdf

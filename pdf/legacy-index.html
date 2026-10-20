@@ -137,6 +137,40 @@ footer .contact{font-size:14.5px;line-height:1.9;opacity:.9}
   .shots.two,.shots.four{grid-template-columns:1fr}
   .wrap{padding-inline:18px}
 }
+
+/* ===== print (PDF) ===== */
+@media print{
+  @page{ size:A4 landscape; margin:0 }
+  html,body{ background:#fff }
+  body{ font-size:12.5px; line-height:1.62 }
+  nav{ display:none !important }
+  *{ -webkit-print-color-adjust:exact !important; print-color-adjust:exact !important }
+
+  .wrap{ max-width:none; padding-inline:16mm }
+
+  /* 한 덩어리마다 새 페이지 */
+  .hero{ break-after:page; padding-block:62mm 0; min-height:209mm }
+  section{ break-before:page; border-top:0; padding-block:12mm }
+  #about .lead,#about p{ margin-bottom:9px }
+  .cover{ break-before:page; padding-block:34mm; min-height:209mm }
+  footer{ break-before:page; padding-block:52mm; min-height:209mm }
+
+  /* 쪼개지면 안 되는 것 */
+  figure,.card,.step,.bar,.tbl,.note{ break-inside:avoid }
+  .trouble{ break-before:page; margin-top:0; border-top:0; padding-top:0 }
+  .facts{ margin-top:22mm; break-inside:auto }
+  .facts>div{ break-inside:avoid }
+  #about .facts:last-of-type{ margin-top:8mm }
+
+  /* 화면용 여백 축소 */
+  .hero h1{ font-size:44px }
+  .cover .num{ font-size:80px }
+  h2{ font-size:28px }
+  .shots img{ max-height:78mm; object-fit:contain; object-position:left top }
+  .about{ align-items:start; grid-template-columns:120px 1fr; gap:24px }
+  .about .photo{ max-width:120px }
+  a{ text-decoration:none }
+}
 </style>
 </head>
 <body>
@@ -171,7 +205,7 @@ footer .contact{font-size:14.5px;line-height:1.9;opacity:.9}
     <div class="eyebrow">ABOUT</div>
     <h2>성장하는 <span style="color:var(--blue)">엔지니어</span> 권민석입니다</h2>
     <div class="about" style="margin-top:34px">
-      <div class="photo"><img src="img/profile.jpg" alt="권민석"></div>
+      <div class="photo"><img src="../public/img/profile.jpg" alt="권민석"></div>
       <div class="mt-10">
         <p>안녕하세요. 권민석입니다. 한번 맡은 일은 끝까지 보고, 같은 실수를 반복하지 않기 위해 늘 기록합니다.</p>
         <p>스타트업에서 한 서비스의 운영을 관리하고 개발하며, 사람들이 실제로 겪는 문제를 정의하고 해결하는 과정에서 꾸준히 성장해 왔습니다. 웹과 백엔드로 시작해 지금은 쿠버네티스 위에서 워크로드를 운영하고 있습니다.</p>
@@ -291,14 +325,14 @@ footer .contact{font-size:14.5px;line-height:1.9;opacity:.9}
       </div>
       <div class="shots">
         <figure>
-          <img src="img/newsboy-community-healthy.png" alt="Argo CD Application 리소스 트리" loading="lazy" decoding="async">
+          <img src="../public/img/newsboy-community-healthy.png" alt="Argo CD Application 리소스 트리" loading="lazy" decoding="async">
           <figcaption>Argo CD Application 상세. Healthy와 Synced 상태, SealedSecret이 Secret으로 복호화되는 흐름, CronJob에서 파생된 Job과 Pod가 한 화면에 보입니다. 마지막 동기화가 제 PR 머지로 찍혀 있습니다.</figcaption>
         </figure>
         <div class="shots two">
-          <figure><img src="img/newsboy-community-publisher.png" alt="community publisher" loading="lazy" decoding="async"><figcaption>커뮤니티 게시 배치 (CronJob)</figcaption></figure>
-          <figure><img src="img/newsboy-issue-desk.png" alt="issue desk" loading="lazy" decoding="async"><figcaption>이슈 생성과 Slack 봇</figcaption></figure>
-          <figure><img src="img/mallo-web.png" alt="mallo web" loading="lazy" decoding="async"><figcaption>Mallo 웹과 뉴스레터 CronJob</figcaption></figure>
-          <figure><img src="img/newsboy-web-api.png" alt="newsboy web api" loading="lazy" decoding="async"><figcaption>같은 클러스터의 다른 애플리케이션</figcaption></figure>
+          <figure><img src="../public/img/newsboy-community-publisher.png" alt="community publisher" loading="lazy" decoding="async"><figcaption>커뮤니티 게시 배치 (CronJob)</figcaption></figure>
+          <figure><img src="../public/img/newsboy-issue-desk.png" alt="issue desk" loading="lazy" decoding="async"><figcaption>이슈 생성과 Slack 봇</figcaption></figure>
+          <figure><img src="../public/img/mallo-web.png" alt="mallo web" loading="lazy" decoding="async"><figcaption>Mallo 웹과 뉴스레터 CronJob</figcaption></figure>
+          <figure><img src="../public/img/newsboy-web-api.png" alt="newsboy web api" loading="lazy" decoding="async"><figcaption>같은 클러스터의 다른 애플리케이션</figcaption></figure>
         </div>
       </div>
     </div>
@@ -344,11 +378,11 @@ footer .contact{font-size:14.5px;line-height:1.9;opacity:.9}
         </div>
         <div class="shots">
           <figure>
-            <img src="img/nks-infra-pr.png" alt="인프라 저장소 PR" loading="lazy" decoding="async">
+            <img src="../public/img/nks-infra-pr.png" alt="인프라 저장소 PR" loading="lazy" decoding="async">
             <figcaption>공용 인프라 저장소에 올린 PR. 매니페스트 변경이 곧 배포이므로 리뷰와 이력이 그대로 남습니다.</figcaption>
           </figure>
           <figure>
-            <img src="img/nks-objectstorage.png" alt="오브젝트 스토리지" loading="lazy" decoding="async">
+            <img src="../public/img/nks-objectstorage.png" alt="오브젝트 스토리지" loading="lazy" decoding="async">
             <figcaption>오브젝트 스토리지로 외부화한 진행 상태. 아침 파드가 수집한 큐를 점심과 저녁 파드가 읽습니다.</figcaption>
           </figure>
         </div>
@@ -417,11 +451,11 @@ footer .contact{font-size:14.5px;line-height:1.9;opacity:.9}
         </div>
         <div class="shots">
           <figure>
-            <img src="img/nks-nodepool.png" alt="NKS 노드풀" loading="lazy" decoding="async">
+            <img src="../public/img/nks-nodepool.png" alt="NKS 노드풀" loading="lazy" decoding="async">
             <figcaption>NKS 노드풀 구성. 일반 노드풀과 고메모리 노드풀을 함께 운용하며, 클러스터 합계는 노드 3대와 메모리 80GB입니다.</figcaption>
           </figure>
           <figure>
-            <img src="img/mallo-web-logs.png" alt="Argo CD 로그" loading="lazy" decoding="async">
+            <img src="../public/img/mallo-web-logs.png" alt="Argo CD 로그" loading="lazy" decoding="async">
             <figcaption>실행 중인 파드의 로그는 Argo CD에서 확인합니다. 완료된 파드의 로그는 남지 않아, 실패 증거를 따로 남기도록 보강했습니다.</figcaption>
           </figure>
         </div>
@@ -462,8 +496,8 @@ footer .contact{font-size:14.5px;line-height:1.9;opacity:.9}
         </div>
       </div>
       <div class="shots two">
-        <figure><img src="img/issue.png" alt="이슈 목록" loading="lazy" decoding="async"><figcaption>이슈 목록 화면</figcaption></figure>
-        <figure><img src="img/issue2.png" alt="이슈 상세" loading="lazy" decoding="async"><figcaption>이슈 상세 화면</figcaption></figure>
+        <figure><img src="../public/img/issue.png" alt="이슈 목록" loading="lazy" decoding="async"><figcaption>이슈 목록 화면</figcaption></figure>
+        <figure><img src="../public/img/issue2.png" alt="이슈 상세" loading="lazy" decoding="async"><figcaption>이슈 상세 화면</figcaption></figure>
       </div>
     </div>
 
@@ -499,8 +533,8 @@ footer .contact{font-size:14.5px;line-height:1.9;opacity:.9}
           </div>
         </div>
         <div class="shots">
-          <figure><img src="img/issue3.png" alt="파이프라인 설계" loading="lazy" decoding="async"><figcaption>파이프라인 설계와 Slack 운영 리포트</figcaption></figure>
-          <figure><img src="img/issue4.png" alt="모바일 화면" loading="lazy" decoding="async"><figcaption>모바일에서 본 이슈 상세</figcaption></figure>
+          <figure><img src="../public/img/issue3.png" alt="파이프라인 설계" loading="lazy" decoding="async"><figcaption>파이프라인 설계와 Slack 운영 리포트</figcaption></figure>
+          <figure><img src="../public/img/issue4.png" alt="모바일 화면" loading="lazy" decoding="async"><figcaption>모바일에서 본 이슈 상세</figcaption></figure>
         </div>
       </div>
     </div>
@@ -537,8 +571,8 @@ footer .contact{font-size:14.5px;line-height:1.9;opacity:.9}
         <p style="margin-top:22px;font-size:14.5px;color:var(--muted)">이 파이프라인은 이후 쿠버네티스로 이관했습니다. 자세한 내용은 프로젝트 1에 있습니다.</p>
       </div>
       <div class="shots">
-        <figure><img src="img/community.png" alt="Slack 실행 결과" loading="lazy" decoding="async"><figcaption>Slack으로 받는 실행 결과. 수집과 게시 완료가 채널별로 남습니다.</figcaption></figure>
-        <figure><img src="img/community2.png" alt="게시 목록" loading="lazy" decoding="async"><figcaption>실제 게시된 글 목록</figcaption></figure>
+        <figure><img src="../public/img/community.png" alt="Slack 실행 결과" loading="lazy" decoding="async"><figcaption>Slack으로 받는 실행 결과. 수집과 게시 완료가 채널별로 남습니다.</figcaption></figure>
+        <figure><img src="../public/img/community2.png" alt="게시 목록" loading="lazy" decoding="async"><figcaption>실제 게시된 글 목록</figcaption></figure>
       </div>
     </div>
 
@@ -605,10 +639,10 @@ footer .contact{font-size:14.5px;line-height:1.9;opacity:.9}
         </div>
       </div>
       <div class="shots two">
-        <figure><img src="img/mallo.png" alt="뉴스레터 설정" loading="lazy" decoding="async"><figcaption>뉴스레터 수신 설정</figcaption></figure>
-        <figure><img src="img/mallo2.png" alt="홍보 콘텐츠" loading="lazy" decoding="async"><figcaption>홍보 콘텐츠 제작</figcaption></figure>
-        <figure><img src="img/mallo3.png" alt="문서함" loading="lazy" decoding="async"><figcaption>사업계획서와 문서함</figcaption></figure>
-        <figure><img src="img/mallo4.png" alt="발송 결과" loading="lazy" decoding="async"><figcaption>텔레그램으로 발송된 뉴스레터</figcaption></figure>
+        <figure><img src="../public/img/mallo.png" alt="뉴스레터 설정" loading="lazy" decoding="async"><figcaption>뉴스레터 수신 설정</figcaption></figure>
+        <figure><img src="../public/img/mallo2.png" alt="홍보 콘텐츠" loading="lazy" decoding="async"><figcaption>홍보 콘텐츠 제작</figcaption></figure>
+        <figure><img src="../public/img/mallo3.png" alt="문서함" loading="lazy" decoding="async"><figcaption>사업계획서와 문서함</figcaption></figure>
+        <figure><img src="../public/img/mallo4.png" alt="발송 결과" loading="lazy" decoding="async"><figcaption>텔레그램으로 발송된 뉴스레터</figcaption></figure>
       </div>
     </div>
 
@@ -676,10 +710,10 @@ footer .contact{font-size:14.5px;line-height:1.9;opacity:.9}
         <p style="margin-top:22px;font-size:14.5px;color:var(--muted)">실제 트래픽 부하 테스트와 과금, 스케일 정책까지는 가지 못했습니다. 다음에는 CPU 기반 스케일 정책과 GitHub Actions의 terraform plan부터 붙이려 합니다.</p>
       </div>
       <div class="shots two">
-        <figure><img src="img/3tier.png" alt="VPC 구성" loading="lazy" decoding="async"><figcaption>VPC와 서브넷 구성</figcaption></figure>
-        <figure><img src="img/3tier2.png" alt="ALB 타겟 그룹" loading="lazy" decoding="async"><figcaption>ALB 타겟 그룹 상태</figcaption></figure>
-        <figure><img src="img/3tier3.png" alt="RDS" loading="lazy" decoding="async"><figcaption>private 서브넷의 RDS</figcaption></figure>
-        <figure><img src="img/3tier4.png" alt="보안 그룹" loading="lazy" decoding="async"><figcaption>계층 간 접근을 제한한 보안 그룹</figcaption></figure>
+        <figure><img src="../public/img/3tier.png" alt="VPC 구성" loading="lazy" decoding="async"><figcaption>VPC와 서브넷 구성</figcaption></figure>
+        <figure><img src="../public/img/3tier2.png" alt="ALB 타겟 그룹" loading="lazy" decoding="async"><figcaption>ALB 타겟 그룹 상태</figcaption></figure>
+        <figure><img src="../public/img/3tier3.png" alt="RDS" loading="lazy" decoding="async"><figcaption>private 서브넷의 RDS</figcaption></figure>
+        <figure><img src="../public/img/3tier4.png" alt="보안 그룹" loading="lazy" decoding="async"><figcaption>계층 간 접근을 제한한 보안 그룹</figcaption></figure>
       </div>
     </div>
   </div>
