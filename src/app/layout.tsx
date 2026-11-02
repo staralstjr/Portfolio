@@ -1,7 +1,11 @@
 import type { Metadata } from "next";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
 import TopNav from "@/components/TopNav";
 import ToTop from "@/components/ToTop";
+
+// GA4 측정 ID. 환경 변수가 없으면(로컬 개발 등) 스크립트를 넣지 않는다
+const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
 
 export const metadata: Metadata = {
   title: {
@@ -20,6 +24,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {children}
         <ToTop />
       </body>
+      {GA_ID && <GoogleAnalytics gaId={GA_ID} />}
     </html>
   );
 }

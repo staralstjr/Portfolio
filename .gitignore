@@ -7,3 +7,6 @@ next-env.d.ts
 
 # 제출용 PDF는 로컬에만 둔다
 *.pdf
+
+# 로컬 환경 변수
+.env*.local
